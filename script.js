@@ -1,18 +1,10 @@
-function add(a, b) {
-    return a + b;
-}
+function add(a, b) { return a + b; }
 
-function subtract(a, b) {
-    return a - b;
-}
+function subtract(a, b) { return a - b; }
 
-function multiply(a, b) {
-    return a * b;
-}
+function multiply(a, b) { return a * b; }
 
-function divide(a, b) {
-    return b === 0 ? "Error: Lol" : a / b;
-}
+function divide(a, b) { return b === 0 ? "Error: Lol" : a / b; }
 
 function operate(num1, operator, num2) {
     if (operator.length > 1) {
@@ -31,7 +23,6 @@ function operate(num1, operator, num2) {
         default:
             return "Error: Unknown Operator";
     }
-
 }
 
 let operator = "";
@@ -108,4 +99,19 @@ operationBut.forEach(button => {
         }
         
     });
+});
+
+const signBut = document.querySelector("#b-Sign");
+signBut.addEventListener("click", () => {
+    if (screenText.textContent.includes("-")) {
+        screenText.textContent = screenText.textContent.substring(1);
+    }
+    else {
+        screenText.textContent = "-" + screenText.textContent;
+    }
+});
+
+const percentBut = document.querySelector("#b-Percent");
+percentBut.addEventListener("click", () => {
+    screenText.textContent = Number(screenText.textContent) * 0.01;
 });
