@@ -74,7 +74,8 @@ operationBut.forEach(button => {
             if (num1 != null && operator != "" && screenText.textContent != "") {
                 num2 = Number(screenText.textContent);
                 screenText.textContent = operate(num1, operator, num2);
-                num1 = Number(screenText.textContent);
+                num1 = null;
+                num2 = null;
                 operator = "";
                 resultDisplayed = true;
             }
@@ -97,7 +98,6 @@ operationBut.forEach(button => {
                 screenText.textContent = "";
             }
         }
-        
     });
 });
 
