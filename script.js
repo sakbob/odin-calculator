@@ -37,6 +37,7 @@ function operate(num1, operator, num2) {
 let operator = "";
 let num1 = null;
 let num2 = null;
+let resultDisplayed = false;
 
 const screenText = document.querySelector(".screen-text");
 
@@ -44,6 +45,11 @@ const numberBut = document.querySelectorAll(".number-container button");
 numberBut.forEach(button => {
     button.addEventListener("click", () => {
         if (!(screenText.textContent.length > 15)) {
+            if (resultDisplayed) {
+                screenText.textContent = "";
+                resultDisplayed = false;
+            }
+            
             if (button.textContent === ".") {
                 if (!(screenText.textContent.includes("."))) {
                     screenText.textContent += button.textContent;
@@ -79,6 +85,7 @@ operationBut.forEach(button => {
                 screenText.textContent = operate(num1, operator, num2);
                 num1 = Number(screenText.textContent);
                 operator = "";
+                resultDisplayed = true;
             }
         }
         else {
@@ -92,7 +99,7 @@ operationBut.forEach(button => {
                 screenText.textContent = operate(num1, operator, num2);
                 num1 = Number(screenText.textContent);
                 operator = button.textContent;
-
+                resultDisplayed = true;
             }
             else {
                 operator = button.textContent;
