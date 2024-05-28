@@ -6,23 +6,38 @@ function multiply(a, b) { return a * b; }
 
 function divide(a, b) { return b === 0 ? "Error: Lol" : a / b; }
 
+function roundToEightDecimals(num) {
+    if (Math.abs(num) >= 1e10 || Math.abs(num) < 1e-10) {
+        return num.toExponential(8);
+    } else {
+        return Math.round(num * 1e8) / 1e8;
+    }
+}
+
 function operate(num1, operator, num2) {
     if (operator.length > 1) {
         return "Error: Operator length > 1";
     }
 
+    let result;
     switch (operator) {
         case "+":
-            return add(num1, num2);
+            result = add(num1, num2);
+            break;
         case "-":
-            return subtract(num1, num2);
+            rresult = subtract(num1, num2);
+            break;
         case "*":
-            return multiply(num1, num2);
+            result = multiply(num1, num2);
+            break;
         case "/":
-            return divide(num1, num2);
+            result = divide(num1, num2);
+            break;
         default:
             return "Error: Unknown Operator";
     }
+
+    return roundToEightDecimals(result);
 }
 
 let operator = "";
@@ -113,5 +128,5 @@ signBut.addEventListener("click", () => {
 
 const percentBut = document.querySelector("#b-Percent");
 percentBut.addEventListener("click", () => {
-    screenText.textContent = Number(screenText.textContent) * 0.01;
+    screenText.textContent = roundToEightDecimals(Number(screenText.textContent) * 0.01);
 });
