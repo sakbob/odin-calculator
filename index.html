@@ -8,39 +8,47 @@
         <script src="./script.js" defer></script>
     </head>
     <body>
-        <div class="calculator-cointainer">
+        <div class="calculator-container">
             <div class="screen-container">
-
+                <p class="screen-text">0</p>
             </div>
             <div class="button-container">
-                <div class="row-container-1">
-                    <button id="b-Clear">AC</button>
-                    <button id="b-Sign">+/-</button>
-                    <button id="b-Percent">%</button>
-                    <button id="b-Div">/</button>
+                <div class="left-container">
+                    <div class="special-container">
+                        <button id="b-Clear">AC</button>
+                        <button id="b-Sign">+/-</button>
+                        <button id="b-Percent">%</button>
+                    </div>
+                    <div class="number-container">
+                        <div class="row">
+                            <button id="b-7">7</button>
+                            <button id="b-8">8</button>
+                            <button id="b-9">9</button>
+                        </div>
+                        <div class="row">
+                            <button id="b-4">4</button>
+                            <button id="b-5">5</button>
+                            <button id="b-6">6</button>
+                        </div>
+                        <div class="row">
+                            <button id="b-1">1</button>
+                            <button id="b-2">2</button>
+                            <button id="b-3">3</button>
+                        </div>
+                        <div class="row">
+                            <button id="b-0">0</button>
+                            <button id="b-Point">.</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="row-container-2">
-                    <button id="b-7">7</button>
-                    <button id="b-8">8</button>
-                    <button id="b-9">9</button>
-                    <button id="b-Mult">*</button>
-                </div>
-                <div class="row-container-3">
-                    <button id="b-4">4</button>
-                    <button id="b-5">5</button>
-                    <button id="b-6">6</button>
-                    <button id="b-Sub">-</button>
-                </div>
-                <div class="row-container-4">
-                    <button id="b-1">1</button>
-                    <button id="b-2">2</button>
-                    <button id="b-3">3</button>
-                    <button id="b-Add">+</button>
-                </div>
-                <div class="row-container-5">
-                    <button id="b-0">0</button>
-                    <button id="b-Point">.</button>
-                    <button id="b-Equal">=</button>
+                <div class="right-container">
+                    <div class="operation-container">
+                        <button id="b-Div">/</button>
+                        <button id="b-Mult">*</button>
+                        <button id="b-Sub">-</button>
+                        <button id="b-Add">+</button>
+                        <button id="b-Equal">=</button>
+                    </div>
                 </div>
             </div>
         </div>
